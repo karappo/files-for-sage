@@ -10,12 +10,6 @@ Sageをプロジェクトで共通で使えるヘルパーなどをまとめて�
   ```
 2. resources/functions.php (L:61あたり)に外部ファイルの読み込み設定を追加（`'../karappo-common/app/helpers', `）
   ```
-  /**
-  * Sage required files
-  *
-  * The mapped array determines the code library included in your theme.
-  * Add or remove files to the array as needed. Supports child theme overrides.
-  */
   array_map(function ($file) use ($sage_error) {
       $file = "../app/{$file}.php";
       if (!locate_template($file, true, true)) {
@@ -25,12 +19,6 @@ Sageをプロジェクトで共通で使えるヘルパーなどをまとめて�
   ```
   ↓
   ```
-  /**
-  * Sage required files
-  *
-  * The mapped array determines the code library included in your theme.
-  * Add or remove files to the array as needed. Supports child theme overrides.
-  */
   array_map(function ($file) use ($sage_error) {
       $file = "../app/{$file}.php";
       if (!locate_template($file, true, true)) {
