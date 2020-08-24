@@ -1,4 +1,4 @@
-# karappo-common
+# karappo-common for Sage 9.x
 
 Sageをプロジェクトで共通で使えるヘルパーなどをまとめて、共通化する目的。
 
