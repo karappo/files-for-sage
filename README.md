@@ -1,6 +1,8 @@
 # Karappo Common files for Sage 9.x
 
-Sageをプロジェクトで共通で使えるヘルパーなどをまとめて、共通化する目的。
+- Sageをプロジェクトで共通で使えるヘルパーなどをまとめて、共通化する目的です。
+- プロジェクト特有のHelperはこれまで通り、Sageのhelper.phpに記述してください。
+- サブモジュールとしてプロジェクトについて貸して、Sageのファイルから読み込むことで動作します。
 
 **Currentrly support Sage 9.x**
 
