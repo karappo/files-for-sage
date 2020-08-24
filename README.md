@@ -8,7 +8,7 @@ Sageをプロジェクトで共通で使えるヘルパーなどをまとめて�
 
 1. Sageのプロジェクトをセットアップした状態から、themeディレクトリ直下にサブモジュールとして追加
   ```
-  git submodule add git@github.com:karappo/karappo-common.git wp/wp-content/themes/<project>/karappo-common
+  git submodule add git@github.com:karappo/files-for-sage.git wp/wp-content/themes/<project>/karappo-common
   ```
 2. resources/functions.php (L:61あたり)に外部ファイルの読み込み設定を追加
   ```
