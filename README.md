@@ -10,7 +10,7 @@ Sageをプロジェクトで共通で使えるヘルパーなどをまとめて�
   ```
   git submodule add git@github.com:karappo/karappo-common.git wp/wp-content/themes/<project>/karappo-common
   ```
-2. resources/functions.php (L:61あたり)に外部ファイルの読み込み設定を追加（下記、末尾の`'../karappo-common/app/helpers', `）
+2. resources/functions.php (L:61あたり)に外部ファイルの読み込み設定を追加
   ```
   array_map(function ($file) use ($sage_error) {
       $file = "../app/{$file}.php";
@@ -19,7 +19,7 @@ Sageをプロジェクトで共通で使えるヘルパーなどをまとめて�
       }
   }, ['helpers', 'setup', 'filters', 'admin']);
   ```
-  ↓
+  ↓ 末尾の行に`'../karappo-common/app/helpers', `を追記
   ```
   array_map(function ($file) use ($sage_error) {
       $file = "../app/{$file}.php";
