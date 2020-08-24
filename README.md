@@ -2,6 +2,8 @@
 
 Sageをプロジェクトで共通で使えるヘルパーなどをまとめて、共通化する目的。
 
+**Currentrly support Sage 9.x**
+
 ## Getting started
 
 1. Sageのプロジェクトをセットアップした状態から、themeディレクトリ直下にサブモジュールとして追加
