@@ -277,6 +277,41 @@ function wrap_en_nl2br($html) {
 }
 
 /**
+ * アンパサンドをdecode
+ * wp_specialchars_decode()は、defaultで'<', '>'をdecodeし、<br>タグに影響するため使わない
+ * @param string $text
+ * @return string
+ */
+function not_esc_amp($text) {
+  return str_replace('&#038;', '&', $text);
+}
+
+/**
+ * <br>とアンパサンドがあっても大丈夫な wrap_en
+ * @param string $text
+ * @return string
+ */
+function wrap_en_with_br_amp($text) {
+  $placeholder = '【【改行】】';
+  $text = preg_replace('/<br>/', $placeholder, $text);
+  $text = not_esc_amp($text);
+  $text = wrap_en($text);
+  return preg_replace("/$placeholder/", '<br>', $text);
+}
+
+/**
+ * wrap_en + \n →　<br>
+ * @param string $text
+ * @return string
+ */
+function wrap_en_and_n2br($text) {
+  $placeholder = '【【改行】】';
+  $text = preg_replace('/\\\n/', $placeholder, $text);
+  $text = wrap_en($text);
+  return preg_replace("/$placeholder/", '<br>', $text);
+}
+
+/**
  * Return class attribute
  *
  * @param string $route
@@ -296,3 +331,22 @@ function get_class_attr($route, $additional_class = '') {
   $classes_str = implode(' ', $classes);
   return "class=\"$classes_str $additional_class\"";
 }
+
+/**
+ * サイト内URLかどうかを判定し、サイト内URLであれば'target="_blank"'をつけない
+ * @param string $href
+ * @param bool $return Set true if you just want result without echo
+ * @return string
+ */
+function href_target_rel($href, $return = false) {
+  $res = "href=\"$href\"";
+  if( !preg_match( '{^' .home_url(). '}', $href ) ) {
+    $res .= " target=\"_blank\" rel=\"noopener noreferrer\"";
+  }
+  if($return){
+    return $res;
+  }
+  echo $res;
+}
+
+
