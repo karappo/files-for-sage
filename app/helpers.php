@@ -239,8 +239,6 @@ function inline_svg($src, $attrs = '', $return = false) {
  * @return string
  */
 function inline_svg_sp($src, $attrs = '', $return = false) {
-  $src_2x = preg_replace('/(\.\w+)$/', '@2x$1', $src);
-
   // attrの中からclassを抜き出す
   $class_val = '';
   if(preg_match('/class="(\w+)"/', $attrs, $match)){
@@ -250,7 +248,7 @@ function inline_svg_sp($src, $attrs = '', $return = false) {
 
   $src_sp = preg_replace('/\.(\w+)$/', '-sp.$1', $src);
 
-  inline_svg($src_sp, "class=\"pc$class_val\" $attrs", $return);
+  inline_svg($src, "class=\"pc$class_val\" $attrs", $return);
   inline_svg($src_sp, "class=\"sp$class_val\" $attrs", $return);
 }
 /**
