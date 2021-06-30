@@ -100,7 +100,6 @@ function img_tag_sp($src, $attrs = '', $return = false) {
   $res = "<img class=\"pc$class_val\" $attrs src=\"$asset_src\" srcset=\"$asset_src_2x 2x\"><img class=\"sp$class_val\" $attrs src=\"$asset_src_sp\" srcset=\"$asset_src_sp_2x 2x\">";
   if($return){
     return $res;
-
   }
   echo $res;
 }
@@ -369,4 +368,11 @@ function href_target_rel($href, $return = false) {
   echo $res;
 }
 
-
+/**
+ * Remove tags and whitespaces
+ * @param string $html
+ * @return string
+ */
+function removeTagAndSpaces($html) {
+  return preg_replace('/\s+/', '', strip_tags($html));
+}
