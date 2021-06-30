@@ -271,10 +271,14 @@ function parseAttributes($str){
 /**
  * 英数字をspan.enで囲って出力
  * @param string $html
+ * @param bool $wrap_space
+ *    "hoge moge" ↓
+ *    false(default): "<span class="en">hoge</span> <span class="en">moge</span>"
+ *    true:           "<span class="en">hoge moge</span>"
  * @return string
  */
-function wrap_en($html) {
-  return preg_replace('/([0-9a-zA-Z]+)/', '<span class="en">$1</span>', $html);
+function wrap_en($html, $wrap_space = false) {
+  return preg_replace($wrap_space ? '/([0-9a-zA-Z ]+)/' : '/([0-9a-zA-Z]+)/', '<span class="en">$1</span>', $html);
 }
 
 /**
