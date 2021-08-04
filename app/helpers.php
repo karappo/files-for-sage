@@ -33,7 +33,7 @@ function image_tag_sp($src, $attrs = '', $return = false) {
 
   // attrの中からclassを抜き出す
   $class_val = '';
-  if(preg_match('/class="(\w+)"/', $attrs, $match)){
+  if(preg_match('/class="(.*)"/', $attrs, $match)){
     $class_val = " $match[1]";
     $attrs = preg_replace('/(class="\w+")/', '', $attrs);
   }
@@ -84,7 +84,7 @@ function img_tag_sp($src, $attrs = '', $return = false) {
 
   // attrの中からclassを抜き出す
   $class_val = '';
-  if(preg_match('/class="(\w+)"/', $attrs, $match)){
+  if(preg_match('/class="(.+)"/', $attrs, $match)){
     $class_val = " $match[1]";
     $attrs = preg_replace('/(class="\w+")/', '', $attrs);
   }
@@ -137,7 +137,7 @@ function trim_image_tag($src, $aspect_ratios, $attrs = '', $return = false) {
 
   // attrの中からclassを抜き出す
   $class_val = '';
-  if(preg_match('/class="(\w+)"/', $attrs, $match)){
+  if(preg_match('/class="(.*)"/', $attrs, $match)){
     $class_val = " $match[1]";
     $attrs = preg_replace('/(class="\w+")/', '', $attrs);
   }
@@ -240,7 +240,7 @@ function inline_svg($src, $attrs = '', $return = false) {
 function inline_svg_sp($src, $attrs = '', $return = false) {
   // attrの中からclassを抜き出す
   $class_val = '';
-  if(preg_match('/class="(\w+)"/', $attrs, $match)){
+  if(preg_match('/class="(.*)"/', $attrs, $match)){
     $class_val = " $match[1]";
     $attrs = preg_replace('/(class="\w+")/', '', $attrs);
   }
