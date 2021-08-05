@@ -380,3 +380,23 @@ function href_target_rel($href, $return = false) {
 function removeTagAndSpaces($html) {
   return preg_replace('/\s+/', '', strip_tags($html));
 }
+
+/**
+ * $target が $needle で始まる場合はtrueを返す
+ * @param string $target
+ * @param string $needle
+ * @return bool
+ */
+function startsWith($target, $needle) {
+  return (strpos($target, $needle) === 0);
+}
+
+/**
+ * $target が $needle で終わる場合はtrueを返す
+ * @param string $target
+ * @param string $needle
+ * @return bool
+ */
+function endsWith($target, $needle) {
+  return (strrpos($target, $needle) === strlen($target) - strlen($needle));
+}
