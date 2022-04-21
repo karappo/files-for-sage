@@ -162,7 +162,7 @@ function trim_image_tag($src, $aspect_ratios, $attrs = '', $return = false) {
   foreach($aspect_ratios as $data){
     $_ratio = $data['ratio'];
     $_attrs = isset($data['attrs']) ? $data['attrs'] : '';
-    $svg_tags .= rect_svg_tag($_ratio, $_attrs.' style="width:100%;height:auto;visibility:hidden;"', true);
+    $svg_tags .= rect_svg_tag($_ratio, $_attrs.' style="width:100%;height:auto;visibility:hidden;vertical-align:top;"', true);
   }
 
   $res = "<div class=\"trimedImage$class_val\" $attrs style=\"position:relative;background-position:center;background-size:cover;background-image:url($src);$style_val\">$svg_tags</div>";
