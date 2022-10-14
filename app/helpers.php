@@ -16,6 +16,11 @@ use Roots\Sage\Container;
 function image_tag($src, $attrs = '', $return = false) {
   $src = asset_path("images/$src");
 
+  // altが未設定の場合は attrs="" を追加
+  if(!preg_match('/alt=".*"/', $attrs)) {
+    $attrs .= ' alt=""';
+  }
+
   $res = "<img $attrs src=\"$src\">";
   if($return){
     return $res;
@@ -36,6 +41,11 @@ function image_tag_sp($src, $attrs = '', $return = false) {
   if(preg_match('/class="(.*)"/', $attrs, $match)){
     $class_val = " $match[1]";
     $attrs = preg_replace('/(class="\w+")/', '', $attrs);
+  }
+
+  // altが未設定の場合は attrs="" を追加
+  if(!preg_match('/alt=".*"/', $attrs)) {
+    $attrs .= ' alt=""';
   }
 
   $src_sp = preg_replace('/\.(\w+)$/', '-sp.$1', $src);
@@ -65,6 +75,11 @@ function img_tag($src, $attrs = '', $return = false) {
   $asset_src = asset_path("images/$src");
   $asset_src_2x = asset_path("images/$src_2x");
 
+  // altが未設定の場合は attrs="" を追加
+  if(!preg_match('/alt=".*"/', $attrs)) {
+    $attrs .= ' alt=""';
+  }
+
   $res = "<img $attrs src=\"$asset_src\" srcset=\"$asset_src_2x 2x\">";
   if($return){
     return $res;
@@ -87,6 +102,11 @@ function img_tag_sp($src, $attrs = '', $return = false) {
   if(preg_match('/class="(.+)"/', $attrs, $match)){
     $class_val = " $match[1]";
     $attrs = preg_replace('/(class="\w+")/', '', $attrs);
+  }
+
+  // altが未設定の場合は attrs="" を追加
+  if(!preg_match('/alt=".*"/', $attrs)) {
+    $attrs .= ' alt=""';
   }
 
   $src_sp = preg_replace('/\.(\w+)$/', '-sp.$1', $src);
