@@ -6,6 +6,11 @@ namespace App;
 
 use Roots\Sage\Container;
 
+function asset_path($path) {
+  $asset = \Roots\asset($path);
+  return $asset->uri();
+}
+
 /**
  * 単純なimgタグ
  * @param string $src Path to image
