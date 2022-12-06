@@ -230,7 +230,7 @@ function mail_link($mail_address, $return = false) {
  * @return string
  */
 function inline_svg($src, $attrs = '', $return = false) {
-  $src = get_template_directory()."/assets/images/$src";
+  $src = get_template_directory()."/resources/images/$src";
   $res = file_get_contents($src);
   if ($attrs != '') {
     // attrをもともとのattributesとマージして置換
