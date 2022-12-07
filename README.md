@@ -24,7 +24,7 @@
         }
     });
   ```
-  ↓ 先頭の行に`'../karappo-common/app/helpers', `を追記
+  ↓ 先頭の行に`'../karappo-common/app/helpers'`を追記
   ```
   collect(['setup', 'filters', '../karappo-common/app/helpers'])
     ->each(function ($file) {
