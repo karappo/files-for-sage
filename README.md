@@ -12,7 +12,7 @@
   ```
   git submodule add git@github.com:karappo/files-for-sage.git wp/wp-content/themes/<project>/karappo-common
   ```
-1. /themes/<project>/functions.php (L:57あたり)に外部ファイルの読み込み設定を追加
+1. /themes/\<project\>/functions.php (L:57あたり)に外部ファイルの読み込み設定を追加
   ```
   collect(['setup', 'filters'])
     ->each(function ($file) {
